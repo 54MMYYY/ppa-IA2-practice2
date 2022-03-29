@@ -1,14 +1,15 @@
 #include <stdio.h>
 
 int input_side(){
-  int a,b,c;
-  printf("Enter the length of a side: ");
+  int a;
+  printf("Enter the length of the sides of the triangle\n");
   scanf("%d",&a);
+  return a;
 }
 
 int check_scalene(int a, int b, int c){
   int isscalene;
-  if(a!=b && a!=c && b!=c){
+  if(a!=b && b!=c && a!=c){
     isscalene=0;
   }
   return isscalene;
@@ -16,9 +17,11 @@ int check_scalene(int a, int b, int c){
 
 void output(int a, int b, int c, int isscalene){
   if(isscalene==0){
-    printf("The triangle iss scalene for lengths %d,%d,%d",a,b,c);
+    printf("The triangle with sides %d %d and %d is scalene",a,b,c);
   }
-  printf("The triangle is not scalene for lengths %d,%d,%d",a,b,c);
+  else{
+  printf("The triangle with sides %d %d and %d is not scalene",a,b,c);
+    }
 }
 
 int main(){
